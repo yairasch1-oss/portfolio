@@ -150,7 +150,7 @@ def page(lng, site, path, title, body, active="", depth=0):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?{u['fonts']}&display=swap">
-{f'<link rel="preload" href="{up}fonts/telaviv-brutalist-regular.woff2" as="font" type="font/woff2" crossorigin>' if lng == "he" else ""}
+{f'<link rel="preload" href="{up}fonts/telaviv-brutalist-regular.woff2" as="font" type="font/woff2" crossorigin>'}
 <link rel="stylesheet" href="{up}base.css">
 <link rel="stylesheet" href="{up}style.css">
 <link rel="alternate" hreflang="{other}" href="{HOSTS[other]}/{path}">
