@@ -166,7 +166,7 @@ def page(lng, site, path, title, body, active="", depth=0):
 </main>
 <footer class="site-foot"><span>{e(u['rights'].format(y=2026, n=name))}</span></footer>
 <script>
-(function(){{var a=document.querySelector('.lang');if(!/yairaschresnick\\.com$/.test(location.hostname)){{a.href=a.getAttribute('data-local');}}}})();
+(function(){{var a=document.querySelector('.lang');if(location.protocol==='file:'){{a.href=a.getAttribute('data-local');}}}})();
 </script>
 </body>
 </html>
