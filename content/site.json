@@ -1,0 +1,51 @@
+{
+  "name_en": "Yair Asch-Resnick",
+  "name_he": "יאיר אש-רזניק",
+  "intro_en": "Graphic designer working in identity, maps and editorial design. B.Des, Bezalel Academy of Arts and Design.",
+  "intro_he": "מעצב גרפי שעובד בזהות חזותית, מפות ועיצוב מערכתי. בוגר B.Des, בצלאל אקדמיה לאמנות ועיצוב.",
+  "portrait": "https://static.wixstatic.com/media/fcd2e0_505712e3de284269a28b79fca9e4f525~mv2.png/v1/fit/w_700,h_700,q_90/fcd2e0_505712e3de284269a28b79fca9e4f525~mv2.png",
+  "cv_pdf": "https://www.yairaschresnick.com/_files/ugd/fcd2e0_c66cf7c1147645819e99eea64b37091f.pdf",
+  "email": "yairasch1@gmail.com",
+  "phone_en": "+972 50 585 3520",
+  "phone_he": "050-585-3520",
+  "contact_en": "For project inquiries or collaborations, feel free to reach out.",
+  "contact_he": "לפניות על פרויקטים ושיתופי פעולה, אשמח לשמוע מכם.",
+  "cv": [
+    {
+      "years": "2022–2026",
+      "text_en": "B.Des in Visual Communication, Bezalel Academy of Arts and Design",
+      "text_he": "תואר B.Des בתקשורת חזותית, בצלאל אקדמיה לאמנות ועיצוב"
+    },
+    {
+      "years": "2026",
+      "text_en": "Book Designer for a non-fiction title, Dabri Shir Publishing",
+      "text_he": "עיצוב ספר עיון, הוצאת דברי שיר"
+    },
+    {
+      "years": "2025–2026",
+      "text_en": "VP of Communications and New Media, Ribo Non-Partisan Organization",
+      "text_he": "סמנכ״ל תקשורת ומדיה חדשה, ארגון ריבו (א-מפלגתי)"
+    },
+    {
+      "years": "2025",
+      "text_en": "Design Intern at Dov Abramson Studio",
+      "text_he": "מתמחה בסטודיו דב אברמסון"
+    },
+    {
+      "years": "2023",
+      "text_en": "Visual Identity Rebranding Project Lead, Hadar Institute",
+      "text_he": "הובלת פרויקט המיתוג מחדש, מכון הדר"
+    },
+    {
+      "years": "2021–2023",
+      "text_en": "Alumni Community Coordinator, Hadar Institute",
+      "text_he": "רכז קהילת הבוגרים, מכון הדר"
+    },
+    {
+      "years": "2019–2021",
+      "text_en": "Chapter Director, Tzofim (Israel Scouts)",
+      "text_he": "ראש שבט, הצופים"
+    }
+  ],
+  "instagram": ""
+}

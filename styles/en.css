@@ -1,0 +1,22 @@
+/* ENGLISH — fonts and type sizes only. Layout and colors are in base.css. */
+:root{
+  --display:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;
+  --body:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;
+  --label:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+body{font:400 17px/1.55 var(--body)}
+.brand{font:600 clamp(28px,3.6vw,44px)/1 var(--display);letter-spacing:-.02em}
+.nav a{font:500 13px/1 var(--label);text-transform:uppercase;letter-spacing:.06em}
+.lang{font:500 14px/1 "IBM Plex Sans Hebrew",var(--body)}
+.intro p{font:500 clamp(22px,2.6vw,32px)/1.25 var(--display);letter-spacing:-.01em}
+.reveal h2{font:600 22px/1.25 var(--display);letter-spacing:-.01em}
+@media (hover:none){.reveal h2{font-size:16px}}
+.meta{font:400 12px/1.4 var(--label);text-transform:uppercase;letter-spacing:.05em}
+.project-text h1{font:600 clamp(30px,4.4vw,52px)/1.08 var(--display);letter-spacing:-.02em}
+.pager a{font:400 13px/1.4 var(--label)}
+.about h1,.contact h1{font:600 clamp(30px,4vw,46px)/1.1 var(--display);letter-spacing:-.02em}
+.yr{font:400 13px/1.7 var(--label)}
+.cvlink{font:500 13px var(--label);text-transform:uppercase;letter-spacing:.06em}
+.contact dt{font:400 12px/1.9 var(--label);text-transform:uppercase;letter-spacing:.06em}
+.contact dd{font-size:20px}
+.site-foot{font:400 12px var(--label)}

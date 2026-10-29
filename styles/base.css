@@ -1,0 +1,92 @@
+/* BASE — shared by BOTH sites: layout, grid, hover effects, colors.
+   Change something here and it changes in English and Hebrew together.
+   Fonts and type sizes live in en.css / he.css. */
+:root{
+  --green:#004B2C;          /* the one color: name, links, hovers, buttons */
+  --paper:#ffffff;
+  --ink:#141414;
+  --muted:#6f716f;
+  --line:#dde0dd;
+  --veil:rgba(255,255,255,.9);   /* hover cover over project images */
+  --gutter:clamp(16px,4vw,48px);
+  --gap:clamp(20px,3vw,40px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink)}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--green)}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+::selection{background:var(--green);color:#fff}
+
+/* header */
+.site-head{display:flex;align-items:center;gap:20px 28px;flex-wrap:wrap;
+  padding-block:24px;padding-inline:var(--gutter);border-bottom:1px solid var(--line)}
+.brand{color:var(--green);text-decoration:none;margin-inline-end:auto}
+.nav{display:flex;gap:24px;flex-wrap:wrap}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover,.nav a[aria-current]{color:var(--green)}
+.tools{display:flex;align-items:center;gap:12px}
+.lang{display:inline-flex;align-items:center;height:32px;padding-inline:12px;border:1px solid var(--green);
+  border-radius:999px;color:var(--green);text-decoration:none}
+.lang:hover{background:var(--green);color:#fff}
+.insta{display:inline-grid;place-items:center;width:32px;height:32px;color:var(--green);text-decoration:none}
+.insta img{width:24px;height:24px}
+.insta:hover{opacity:.7}
+
+main{padding-inline:var(--gutter)}
+
+/* intro: full width */
+.intro{padding-block:clamp(36px,6vw,80px) clamp(28px,4vw,48px)}
+.intro p{margin:0;max-width:none;text-wrap:pretty}
+
+/* project grid — identical in both languages */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap);padding-bottom:80px}
+@media (max-width:700px){.grid{grid-template-columns:1fr}}
+.card{display:block;text-decoration:none}
+.frame{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--line)}
+.frame img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.reveal{position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;
+  background:var(--veil);opacity:0;transition:opacity .25s ease}
+.reveal h2{margin:0;color:var(--green);text-wrap:balance;max-width:22ch}
+.card:hover .reveal,.card:focus-visible .reveal{opacity:1}
+.card:hover .frame img{transform:scale(1.03)}
+/* touch screens have no hover: title sits as a strip at the bottom */
+@media (hover:none){
+  .reveal{opacity:1;inset:auto 0 0 0;place-items:start;padding:10px 14px;text-align:start}
+  .reveal h2{max-width:none}
+}
+
+.meta{margin:0;color:var(--muted)}
+
+/* project page */
+.project{max-width:1100px;margin-inline:auto;padding-block:40px 80px}
+.hero{width:100%;height:auto}
+.project-text{max-width:64ch;padding-block:40px}
+.project-text h1{margin:0 0 10px;color:var(--green);text-wrap:balance}
+.project-text .meta{margin-bottom:28px}
+.project-text p{margin:0 0 1em}
+.gallery{display:flex;flex-direction:column;align-items:center;gap:var(--gap)}
+.gallery img{width:100%;height:auto;background:var(--line)}
+.pager{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:64px;padding-top:20px;border-top:1px solid var(--line)}
+.pager a{text-decoration:none;color:var(--muted)}
+.pager a:hover{color:var(--green)}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(24px,5vw,72px);padding-block:clamp(40px,7vw,88px)}
+@media (max-width:700px){.about{grid-template-columns:1fr}.portrait{max-width:220px}}
+.about h1,.contact h1{margin:0 0 28px;color:var(--green)}
+.cv{list-style:none;margin:0;padding:0;max-width:62ch}
+.cv li{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding-block:12px;border-top:1px solid var(--line)}
+.yr{color:var(--muted);font-variant-numeric:tabular-nums}
+.cvlink{display:inline-block;margin-top:28px}
+
+/* contact */
+.contact{padding-block:clamp(40px,7vw,88px);max-width:52ch}
+.contact dl{display:grid;grid-template-columns:90px minmax(0,1fr);gap:14px 16px;margin-top:36px}
+.contact dt{color:var(--muted)}
+.contact dd{margin:0}
+
+.site-foot{padding-block:28px;padding-inline:var(--gutter);border-top:1px solid var(--line);color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

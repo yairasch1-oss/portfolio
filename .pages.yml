@@ -1,0 +1,50 @@
+# Dashboard settings (Pages CMS — https://pagescms.org)
+media:
+  input: media
+  output: /media
+
+content:
+  - name: projects
+    label: פרויקטים
+    type: collection
+    path: content/projects
+    format: json
+    filename: "{primary}.json"
+    fields:
+      - { name: title_en, label: "Title (English)", type: string, required: true }
+      - { name: title_he, label: "כותרת (עברית)", type: string }
+      - { name: order, label: "סדר בדף הבית (1 = ראשון)", type: number }
+      - { name: draft, label: "טיוטה (לא מוצג באתר)", type: boolean }
+      - { name: cover, label: "תמונה ראשית / כריכה", type: image }
+      - { name: images, label: "תמונות הפרויקט (לפי הסדר)", type: image, list: true }
+      - { name: meta_en, label: "Subtitle (English) — course, year", type: string }
+      - { name: meta_he, label: "שורת פרטים (עברית) — קורס, שנה", type: string }
+      - { name: text_en, label: "Text (English) — empty line = new paragraph", type: text }
+      - { name: text_he, label: "טקסט (עברית) — שורה ריקה = פסקה חדשה", type: text }
+
+  - name: site
+    label: פרטי האתר, אודות וקשר
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - { name: name_en, label: "Name (English)", type: string }
+      - { name: name_he, label: "שם (עברית)", type: string }
+      - { name: intro_en, label: "Home intro (English) — leave empty to hide", type: text }
+      - { name: intro_he, label: "פתיח בדף הבית (עברית) — ריק = מוסתר", type: text }
+      - { name: portrait, label: "תמונת פרופיל", type: image }
+      - { name: cv_pdf, label: "קורות חיים (PDF)", type: file }
+      - name: cv
+        label: שורות קורות חיים
+        type: object
+        list: true
+        fields:
+          - { name: years, label: "שנים", type: string }
+          - { name: text_en, label: "English", type: string }
+          - { name: text_he, label: "עברית", type: string }
+      - { name: instagram, label: "קישור לאינסטגרם", type: string }
+      - { name: email, label: "דוא״ל", type: string }
+      - { name: phone_en, label: "Phone (English format)", type: string }
+      - { name: phone_he, label: "טלפון (פורמט עברי)", type: string }
+      - { name: contact_en, label: "Contact text (English)", type: text }
+      - { name: contact_he, label: "טקסט צור קשר (עברית)", type: text }

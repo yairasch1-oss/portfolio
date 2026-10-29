@@ -1,0 +1,28 @@
+/* עברית — פונטים וגדלי טקסט בלבד. הפריסה, הגריד, ה-hover והצבעים נמצאים ב-base.css,
+   כך ששני האתרים נשארים זהים במבנה. */
+@font-face{
+  font-family:"TelAviv Brutalist";
+  src:url("fonts/telaviv-brutalist-regular.woff2") format("woff2");
+  font-weight:400;font-style:normal;font-display:swap;
+}
+:root{
+  --display:"TelAviv Brutalist","Frank Ruhl Libre",serif;   /* כותרות */
+  --body:"Frank Ruhl Libre","Times New Roman",serif;        /* טקסט רץ */
+  --label:"IBM Plex Sans Hebrew",Arial,sans-serif;          /* תפריט, פרטים קטנים */
+}
+body{font:400 19px/1.65 var(--body)}
+.brand{font:400 clamp(32px,4vw,52px)/1 var(--display)}
+.nav a{font:500 15px/1 var(--label)}
+.lang{font:500 13px/1 "IBM Plex Mono",ui-monospace,monospace}
+.intro p{font:400 clamp(22px,2.6vw,32px)/1.4 var(--body)}
+.reveal h2{font:400 26px/1.2 var(--display)}
+@media (hover:none){.reveal h2{font-size:18px}}
+.meta{font:400 14px/1.4 var(--label)}
+.project-text h1{font:400 clamp(34px,4.8vw,60px)/1.1 var(--display)}
+.pager a{font:400 15px/1.4 var(--label)}
+.about h1,.contact h1{font:400 clamp(34px,4.4vw,54px)/1.1 var(--display)}
+.yr{font:400 14px/1.9 var(--label);direction:ltr;text-align:right}
+.cvlink{font:500 15px var(--label)}
+.contact dt{font:400 14px/1.9 var(--label)}
+.contact dd{font-size:20px}
+.site-foot{font:400 13px var(--label)}
