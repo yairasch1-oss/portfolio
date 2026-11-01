@@ -1,19 +1,18 @@
 {
-  "order": 3,
-  "draft": false,
   "title_en": "HADAR – New Corporate Identity",
   "title_he": "שפה גרפית חדשה למכון הדר",
+  "order": 3,
+  "draft": false,
+  "cover": "/media/קובץ עבודה עמיתים-1.png",
+  "images": [
+    "/media/20250327_172955.jpg",
+    "/media/ירושלים תבנית (1).png",
+    "/media/בית מדרש פתוח ימי רביעי.png",
+    "/media/4846466-1.png",
+    "/media/Screenshot_20250529-230052_Instagram-1.jpg"
+  ],
   "meta_en": "Branding, Hadar Institute · 2023",
   "meta_he": "מיתוג, מכון הדר · 2023",
-  "cover": "https://static.wixstatic.com/media/fcd2e0_50318c978c0743d492c80bd725c2eaf3~mv2.png/v1/fit/w_2000,h_2000,q_90/fcd2e0_50318c978c0743d492c80bd725c2eaf3~mv2.png",
-  "images": [
-    "https://static.wixstatic.com/media/fcd2e0_e9cee37d20574e5ea24c92323802f9b0~mv2.png/v1/fit/w_1600,h_1600,q_90/fcd2e0_e9cee37d20574e5ea24c92323802f9b0~mv2.png",
-    "https://static.wixstatic.com/media/fcd2e0_c0c02a9733ea4b25a4e99c09b19b73f9~mv2.jpg/v1/fit/w_1600,h_1600,q_90/fcd2e0_c0c02a9733ea4b25a4e99c09b19b73f9~mv2.jpg",
-    "https://static.wixstatic.com/media/fcd2e0_0735cc78d54f40ffb927f7e12b0d2cdc~mv2.png/v1/fit/w_1600,h_1600,q_90/fcd2e0_0735cc78d54f40ffb927f7e12b0d2cdc~mv2.png",
-    "https://static.wixstatic.com/media/fcd2e0_0cc66f8ba1e84854abb64f61e80fd136~mv2.png/v1/fit/w_1600,h_1600,q_90/fcd2e0_0cc66f8ba1e84854abb64f61e80fd136~mv2.png",
-    "https://static.wixstatic.com/media/fcd2e0_02f1a2aa971249a79bdb24d52306f86f~mv2.png/v1/fit/w_1600,h_1600,q_90/fcd2e0_02f1a2aa971249a79bdb24d52306f86f~mv2.png",
-    "https://static.wixstatic.com/media/fcd2e0_99c8017a8ed9499e993b35761f852c52~mv2.png/v1/fit/w_1600,h_1600,q_90/fcd2e0_99c8017a8ed9499e993b35761f852c52~mv2.png"
-  ],
   "text_en": "Mechon Hadar Branding Project.\n\nHadar Institute is an egalitarian Beit Midrash that promotes Torah study deeply connected to life: egalitarian and open, yet committed to Halakha and spiritual devotion (Yirat Shamayim).\n\nIn recent years, the organization has evolved from hosting major highlight events, such as the Elul program and annual alumni conventions, into a vibrant, day-to-day Beit Midrash in Jerusalem, alongside continuous community engagement throughout Israel.\n\nI had the privilege of accompanying this growth and designing a new visual language for the organization. My goal was to create a fresh, original brand identity for Hadar, one that speaks a groundbreaking language while engaging with ancient, sacred themes with love, reverence, and courage.\n\nI designed an original pattern that integrates traditional Jewish motifs and chose a bold, vibrant color palette that remains warm and inviting. The typography was also carefully selected with the Beit Midrash’s young audience in mind: a generation that honors tradition and nostalgia but isn't afraid to speak in a contemporary voice.",
   "text_he": "פרויקט המיתוג של מכון הדר.\n\nמכון הדר הוא בית מדרש שוויוני המקדם לימוד תורה הקשור בעומק לחיים: שוויוני ופתוח, ועם זאת מחויב להלכה וליראת שמיים.\n\nבשנים האחרונות הארגון התפתח מאירוח אירועי שיא, כמו תוכנית אלול וכנסי הבוגרים השנתיים, לבית מדרש תוסס ויומיומי בירושלים, לצד פעילות קהילתית שוטפת ברחבי הארץ.\n\nזכיתי ללוות את הצמיחה הזו ולעצב שפה חזותית חדשה לארגון. המטרה שלי הייתה ליצור זהות מותגית רעננה ומקורית להדר, שמדברת בשפה פורצת דרך ובו בזמן עוסקת בתכנים עתיקים ומקודשים באהבה, ביראה ובאומץ.\n\nעיצבתי פטרן מקורי ששוזר מוטיבים יהודיים מסורתיים, ובחרתי פלטת צבעים נועזת ותוססת שנשארת חמה ומזמינה. גם הטיפוגרפיה נבחרה בקפידה מתוך מחשבה על הקהל הצעיר של בית המדרש: דור שמכבד מסורת ונוסטלגיה אבל לא חושש לדבר בקול עכשווי."
 }
