@@ -52,6 +52,7 @@ def paras(text):
 WIDTHS = [480, 900, 1400, 2000]
 CARD = "(max-width:700px) 100vw, 50vw"
 FULL = "(max-width:1100px) 100vw, 1100px"
+TILE = "(max-width:700px) 100vw, 540px"
 SIZES = {}   # /media/x.png -> (width, height) of the original
 WIX = re.compile(r"https://static\.wixstatic\.com/media/([^/]+)")
 
@@ -167,6 +168,25 @@ def page(lng, site, path, title, body, active="", depth=0):
 <footer class="site-foot"><span>{e(u['rights'].format(y=2026, n=name))}</span></footer>
 <script>
 (function(){{var a=document.querySelector('.lang');if(location.protocol==='file:'){{a.href=a.getAttribute('data-local');}}}})();
+/* Project images: click a tile to see it large; arrows move, Esc closes. */
+(function(){{
+  var tiles=[].slice.call(document.querySelectorAll('.gallery img'));if(!tiles.length)return;
+  var box=document.createElement('div');box.className='lightbox';box.hidden=true;
+  box.innerHTML='<img alt=""><button class="lb-close" aria-label="Close">×</button>';
+  document.body.appendChild(box);var big=box.querySelector('img'),i=0;
+  function show(n){{i=(n+tiles.length)%tiles.length;var t=tiles[i];
+    big.removeAttribute('srcset');big.src=t.currentSrc||t.src;
+    if(t.getAttribute('srcset')){{big.srcset=t.getAttribute('srcset');big.sizes='100vw';}}
+    box.hidden=false;document.documentElement.style.overflow='hidden';}}
+  function hide(){{box.hidden=true;document.documentElement.style.overflow='';}}
+  tiles.forEach(function(t,n){{t.tabIndex=0;t.addEventListener('click',function(){{show(n);}});
+    t.addEventListener('keydown',function(ev){{if(ev.key==='Enter')show(n);}});}});
+  box.addEventListener('click',function(ev){{if(ev.target!==big)hide();}});
+  document.addEventListener('keydown',function(ev){{if(box.hidden)return;
+    if(ev.key==='Escape')hide();
+    else if(ev.key==='ArrowRight')show(document.dir==='rtl'?i-1:i+1);
+    else if(ev.key==='ArrowLeft')show(document.dir==='rtl'?i+1:i-1);}});
+}})();
 </script>
 </body>
 </html>
@@ -198,7 +218,7 @@ def build(lng, site, projects):
     for i, p in enumerate(projects):
         prv, nxt = projects[i - 1], projects[(i + 1) % len(projects)]
         hero = pic(p.get("cover"), "../", t(p, "title"), FULL, cls="hero", eager=True) if p.get("cover") else ""
-        imgs = "".join(pic(x, "../", "", FULL) for x in p.get("images") or [] if x)
+        imgs = "".join(pic(x, "../", "", TILE) for x in p.get("images") or [] if x)
         meta = f'<p class="meta">{e(t(p, "meta"))}</p>' if t(p, "meta") else ""
         body = f"""<article class="project">
   {hero}
