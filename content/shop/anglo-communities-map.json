@@ -1,0 +1,24 @@
+{
+  "order": 1,
+  "draft": false,
+  "title_en": "The Anglo-American Communities Guide Map of South Jerusalem",
+  "title_he": "מדריך נתיבי הקהילה האנגלו-סכסית בדרום ירושלים",
+  "cover": "/media/anglo-communities-map-poster.png",
+  "images": [],
+  "text_en": "A poster from my final project, “Judaism and Humanity”: a series of maps surveying South Jerusalem as a stronghold of liberal religiosity. Submitted to the Department of Visual Communication, Bezalel Academy of Arts and Design, 2026.",
+  "text_he": "פוסטר מתוך פרויקט הגמר שלי: ׳יהדות ואנושיות – סדרת מפות שסוקרות את דרום-ירושלים כמעוז של דתיות ליברלית.׳ הוגש במחלקה לתקשורת חזותית, בצלאל, 2026.",
+  "variants": [
+    {
+      "size_en": "Poster 35×70 cm",
+      "size_he": "פוסטר 35×70 ס״מ",
+      "price": 100,
+      "frame_price": 20
+    },
+    {
+      "size_en": "Poster 50×100 cm",
+      "size_he": "פוסטר 50×100 ס״מ",
+      "price": 150,
+      "frame_price": 40
+    }
+  ]
+}

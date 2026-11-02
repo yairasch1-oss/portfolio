@@ -50,5 +50,50 @@ content:
       - { name: email, label: "דוא״ל", type: string }
       - { name: phone_en, label: "Phone (English format)", type: string }
       - { name: phone_he, label: "טלפון (פורמט עברי)", type: string }
+      - { name: address_en, label: "Business address (English)", type: string }
+      - { name: address_he, label: "כתובת העסק (עברית)", type: string }
       - { name: contact_en, label: "Contact text (English)", type: text }
       - { name: contact_he, label: "טקסט צור קשר (עברית)", type: text }
+
+  - name: shop
+    label: חנות – מוצרים
+    type: collection
+    path: content/shop
+    format: json
+    filename: "{primary}.json"
+    fields:
+      - { name: title_en, label: "Product name (English)", type: string, required: true }
+      - { name: title_he, label: "שם המוצר (עברית)", type: string }
+      - { name: order, label: "סדר בחנות (1 = ראשון)", type: number }
+      - { name: draft, label: "טיוטה (לא מוצג באתר)", type: boolean }
+      - { name: cover, label: "תמונה ראשית", type: image }
+      - { name: images, label: "תמונות נוספות", type: image, list: true }
+      - { name: text_en, label: "Description (English)", type: text }
+      - { name: text_he, label: "תיאור (עברית)", type: text }
+      - name: variants
+        label: "גדלים ומחירים"
+        type: object
+        list: true
+        fields:
+          - { name: size_he, label: "גודל (עברית), למשל: פוסטר 35×70 ס״מ", type: string }
+          - { name: size_en, label: "Size (English), e.g. Poster 35×70 cm", type: string }
+          - { name: price, label: "מחיר (₪)", type: number }
+          - { name: frame_price, label: "תוספת מסגרת (₪) – ריק = אין מסגרת לגודל הזה", type: number }
+
+  - name: shop_settings
+    label: חנות – הגדרות ותקנון
+    type: file
+    path: content/shop.json
+    format: json
+    fields:
+      - { name: shipping_price, label: "מחיר משלוח (₪) – 0 = בלי אפשרות משלוח", type: number }
+      - { name: pickup_he, label: "טקסט איסוף עצמי (עברית)", type: string }
+      - { name: pickup_en, label: "Pickup text (English)", type: string }
+      - { name: shipping_he, label: "טקסט משלוח (עברית)", type: string }
+      - { name: shipping_en, label: "Delivery text (English)", type: string }
+      - { name: intro_he, label: "פתיח לעמוד החנות (עברית)", type: text }
+      - { name: intro_en, label: "Shop intro (English)", type: text }
+      - { name: terms_he, label: "תקנון (עברית) – שורה שמתחילה ב-## היא כותרת", type: text }
+      - { name: terms_en, label: "Terms (English) – a line starting with ## is a heading", type: text }
+      - { name: checkout_live, label: "תשלום אונליין פעיל (להדליק רק אחרי אישור הסליקה)", type: boolean }
+      - { name: currency, label: "סימן מטבע", type: string, hidden: true }

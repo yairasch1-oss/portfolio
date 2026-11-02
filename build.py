@@ -8,6 +8,7 @@ you save in the dashboard. Text lives in content/, images in media/,
 design in styles/en.css and styles/he.css.
 """
 import json, os, re, shutil, html
+import shop
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -165,7 +166,7 @@ def page(lng, site, path, title, body, active="", depth=0):
 <main>
 {body}
 </main>
-<footer class="site-foot"><span>{e(u['rights'].format(y=2026, n=name))}</span></footer>
+<footer class="site-foot"><span>{e(u['rights'].format(y=2026, n=name))}</span>{f'<span>{e(site.get(f"address_{lng}"))}</span>' if site.get(f"address_{lng}") else ""}{f'<span dir="ltr">{e(site.get(f"phone_{lng}"))}</span>' if site.get(f"phone_{lng}") else ""}<a href="{up}terms.html">{e(shop.TXT[lng]["terms"])}</a></footer>
 <script>
 (function(){{var a=document.querySelector('.lang');if(location.protocol==='file:'){{a.href=a.getAttribute('data-local');}}}})();
 /* Project images: click a tile to see it large; arrows move, Esc closes. */
@@ -242,10 +243,16 @@ def build(lng, site, projects):
 <dt>{e(u['phone'])}</dt><dd><a href="tel:{re.sub(r'[^0-9+]', '', phone)}" dir="ltr">{e(phone)}</a></dd></dl></section>"""
     (out / "contact.html").write_text(page(lng, site, "contact.html", f"{u['contact']} · {site[f'name_{lng}']}", body, "contact.html"), encoding="utf-8")
 
+    shop.render(lng, site, SHOP, PRODUCTS, out, page, pic, paras, e, CARD, TILE)
+
 
 if __name__ == "__main__":
     site, projects = load()
+    SHOP, PRODUCTS = shop.load_shop()
+    if PRODUCTS:
+        for lng in UI:
+            UI[lng]["nav"].insert(2, ("shop.html", shop.TXT[lng]["shop"]))
     shutil.rmtree(DIST, ignore_errors=True)
     for lng in ("en", "he"):
         build(lng, site, projects)
-    print(f"Built {len(projects)} projects -> dist/en, dist/he")
+    print(f"Built {len(projects)} projects, {len(PRODUCTS)} products -> dist/en, dist/he")
