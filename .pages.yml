@@ -32,6 +32,10 @@ content:
       - { name: name_he, label: "שם (עברית)", type: string }
       - { name: intro_en, label: "Home intro (English) — leave empty to hide", type: text }
       - { name: intro_he, label: "פתיח בדף הבית (עברית) — ריק = מוסתר", type: text }
+      - { name: about_title_en, label: "About page title (English)", type: string }
+      - { name: about_title_he, label: "כותרת עמוד אודות (עברית)", type: string }
+      - { name: about_text_en, label: "About text (English)", type: text }
+      - { name: about_text_he, label: "פסקה בעמוד אודות (עברית)", type: text }
       - { name: portrait, label: "תמונת פרופיל", type: image }
       - { name: cv_pdf, label: "קורות חיים (PDF)", type: file }
       - name: cv

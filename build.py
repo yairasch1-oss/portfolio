@@ -84,7 +84,7 @@ def optimize_media(out):
                 if w >= im.width and w != WIDTHS[0]:
                     continue
                 small = im if w >= im.width else im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
-                small.save(dest.with_name(f"{dest.stem}-{w}.webp"), "WEBP", quality=82, method=6)
+                small.save(dest.with_name(f"{dest.stem}-{w}.webp"), "WEBP", quality=82, method=4)
 
 
 def variants(path, up):
@@ -233,8 +233,8 @@ def build(lng, site, projects):
     portrait = site.get("portrait")
     cvpdf = src(site.get("cv_pdf"), "")
     body = f"""<section class="about">{pic(portrait, "", site[f"name_{lng}"], "(max-width:700px) 220px, 260px", cls="portrait", eager=True) if portrait else '<div></div>'}
-<div><h1>{e(u['about'])}</h1><ol class="cv">{rows}</ol>{f'<a class="cvlink" href="{e(cvpdf)}">{e(u["cv"])}</a>' if cvpdf else ''}</div></section>"""
-    (out / "about.html").write_text(page(lng, site, "about.html", f"{u['about']} · {site[f'name_{lng}']}", body, "about.html"), encoding="utf-8")
+<div><h1>{e(site.get(f'about_title_{lng}') or u['about'])}</h1>{f'<div class="about-text">{paras(site.get(f"about_text_{lng}"))}</div>' if site.get(f'about_text_{lng}') else ''}<ol class="cv">{rows}</ol>{f'<a class="cvlink" href="{e(cvpdf)}">{e(u["cv"])}</a>' if cvpdf else ''}</div></section>"""
+    (out / "about.html").write_text(page(lng, site, "about.html", f"{site.get(f'about_title_{lng}') or u['about']} · {site[f'name_{lng}']}", body, "about.html"), encoding="utf-8")
 
     phone = site.get(f"phone_{lng}") or ""
     body = f"""<section class="contact"><h1>{e(u['contact'])}</h1><p>{e(site.get(f'contact_{lng}'))}</p>

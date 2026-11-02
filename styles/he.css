@@ -21,6 +21,7 @@ body{font:400 19px/1.65 var(--body)}
 .project-text h1{font:400 clamp(34px,4.8vw,60px)/1.1 var(--display)}
 .pager a{font:400 15px/1.4 var(--label)}
 .about h1,.contact h1{font:400 clamp(34px,4.4vw,54px)/1.1 var(--display)}
+.about-text{font:400 clamp(20px,2vw,24px)/1.55 var(--body)}
 .yr{font:400 14px/1.9 var(--label);direction:ltr;text-align:right}
 .cvlink{font:500 15px var(--label)}
 .contact dt{font:400 14px/1.9 var(--label)}

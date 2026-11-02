@@ -88,6 +88,8 @@ main{padding-inline:var(--gutter)}
 .about{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(24px,5vw,72px);padding-block:clamp(40px,7vw,88px)}
 @media (max-width:700px){.about{grid-template-columns:1fr}.portrait{max-width:220px}}
 .about h1,.contact h1{margin:0 0 28px;color:var(--green)}
+.about-text{max-width:62ch;margin-bottom:clamp(28px,4vw,44px)}
+.about-text p{margin:0 0 .8em}
 .cv{list-style:none;margin:0;padding:0;max-width:62ch}
 .cv li{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding-block:12px;border-top:1px solid var(--line)}
 .yr{color:var(--muted);font-variant-numeric:tabular-nums}
