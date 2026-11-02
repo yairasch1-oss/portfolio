@@ -1,12 +1,18 @@
 {
-  "order": 5,
-  "draft": false,
   "title_en": "To Be a Hero – Military and Manhood",
   "title_he": "להיות גיבור – אסופת טקסטים על גבריות וצבא",
+  "order": 5,
+  "draft": false,
+  "cover": "/media/20250604_130844-01.jpeg",
+  "images": [
+    "/media/20250604_130902-01.jpeg",
+    "/media/20250604_130757-01.jpeg",
+    "/media/fcd2e0_c56a0c14c0164914a95224d017da1d35~mv2.webp",
+    "/media/fcd2e0_d37f6e709ada4ad4a94cb3c7d300c057~mv2.webp",
+    "/media/fcd2e0_f76b33b907e845d198d036f15abef76e~mv2.webp"
+  ],
   "meta_en": "Editorial design studio · Third year",
   "meta_he": "סטודיו פורמט מדופדף · שנה ג׳",
-  "cover": "",
-  "images": [],
-  "text_en": "[Project description to add]",
-  "text_he": "[להוסיף תיאור פרויקט]"
+  "text_en": "Content Curating and Book Design. Made for Complex Typography Studio, guided by Dana Gez. 2024.\n\nI collected texts about the different expressions of masculinity in the Israeli military experience, and about the influence the army has on the nature of the men around us. In my design, I aimed to create a stressful, raw, and gray atmosphere, yet still inviting to read - one that generates closeness and intimacy.\nLike a hug between two men who may not know each other, but recognize a shared pain in their eyes.",
+  "text_he": "זה אחד התרגילים הכי מאתגרים ושהכי נשאבתי אליהם בבצלאל. הגשתי אותו בשנה ג׳ בבצלאל במסגרת סטודיו טיפוגרפיה מורכבת בהנחיית דנה גז.\n\nאספתי טקסטים על הביטויים השונים של גבריות בחוויה הצבאית הישראלית, ועל ההשפעות שיש לצה״ל על אופי הגברים שסביבנו. בעיצוב שלי שאפתי ליצור חוויה מלחיצה, גסה ואפורה אבל עדיין מזמינה לקריאה ומייצרת קירבה \n ואינטימיות. כמו חיבוק בין שני גברים שגם אם הם לא מכירים אחד את השני הם מזהים כאב משותף בעיניים."
 }
