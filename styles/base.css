@@ -105,6 +105,9 @@ main{padding-inline:var(--gutter)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
 /* ---------- shop ---------- */
+.shop-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.shop-grid{grid-template-columns:1fr}}
 .page-head{padding-block:clamp(36px,6vw,72px) clamp(24px,3vw,36px)}
 .page-head h1{margin:0;color:var(--green)}
 .price-from{margin:.5em 0 0;color:var(--on-green);opacity:.85}
@@ -155,3 +158,18 @@ main{padding-inline:var(--gutter)}
 .site-foot{display:flex;flex-wrap:wrap;gap:8px 28px}
 .site-foot a{color:var(--muted)}
 .site-foot a:hover{color:var(--green)}
+
+/* shop list: label above a 3:4 thumbnail, hover shows the short description */
+.pcard{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:var(--ink)}
+.pcard-label{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;min-height:3.6em}
+.pcard-label h2{margin:0;color:var(--green);text-wrap:balance;min-width:0}
+.pcard-label .price-from{margin:0;color:var(--muted);white-space:nowrap;opacity:1}
+.pframe{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--line)}
+.pframe img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.pcard-hover{position:absolute;inset:0;display:flex;align-items:flex-end;padding:clamp(18px,2.4vw,28px);
+  background:var(--veil);color:var(--on-green);opacity:0;transition:opacity .25s ease}
+.pcard-hover p{margin:0;display:-webkit-box;-webkit-line-clamp:9;-webkit-box-orient:vertical;overflow:hidden}
+.pcard:hover .pcard-hover,.pcard:focus-visible .pcard-hover{opacity:1}
+.pcard:hover .pframe img{transform:scale(1.03)}
+@media (hover:none){.pcard-hover{display:none}}
+

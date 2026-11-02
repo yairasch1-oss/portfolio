@@ -34,3 +34,5 @@ body{font:400 17px/1.55 var(--body)}
 .opt,.agree{font:400 16px/1.4 var(--body)}
 .total{font:400 13px var(--label);text-transform:uppercase;letter-spacing:.05em}.total strong{font:400 30px var(--display);text-transform:none}
 .buy{font:500 14px/1 var(--label);text-transform:uppercase;letter-spacing:.06em}
+.pcard-label h2{font:400 clamp(19px,1.7vw,22px)/1.2 var(--display)}
+.pcard-hover p{font:400 16px/1.5 var(--body)}

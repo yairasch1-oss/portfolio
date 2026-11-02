@@ -55,6 +55,7 @@ def money(n, cur, lng):
 
 
 def render(lng, site, settings, products, out, page, pic, paras, e, CARD, TILE):
+    SHOP_CARD = "(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"
     x, cur = TXT[lng], settings.get("currency") or "₪"
     t = lambda p, k: p.get(f"{k}_{lng}") or p.get(f"{k}_en") or ""
     (out / "shop").mkdir(parents=True, exist_ok=True)
@@ -64,12 +65,14 @@ def render(lng, site, settings, products, out, page, pic, paras, e, CARD, TILE):
     for p in products:
         low = min(v.get("price") or 0 for v in p["variants"])
         cover = p.get("cover") or (p.get("images") or [""])[0]
-        fig = pic(cover, "", t(p, "title"), CARD) if cover else ""
-        cards.append(f'<a class="card" href="shop/{p["slug"]}.html"><div class="frame">{fig}'
-                     f'<div class="reveal"><h2>{e(t(p, "title"))}</h2><p class="price-from">{e(x["from_"])}{e(money(low, cur, lng))}</p></div></div></a>')
+        fig = pic(cover, "", t(p, "title"), SHOP_CARD) if cover else ""
+        blurb = re.split(r"\n\s*\n", t(p, "text").strip())[0] if t(p, "text") else ""
+        cards.append(f'<a class="pcard" href="shop/{p["slug"]}.html">'
+                     f'<div class="pcard-label"><h2>{e(t(p, "title"))}</h2><span class="price-from">{e(x["from_"])}{e(money(low, cur, lng))}</span></div>'
+                     f'<div class="pframe">{fig}<div class="pcard-hover"><p>{e(blurb)}</p></div></div></a>')
     intro = settings.get(f"intro_{lng}")
     body = f'<section class="page-head"><h1>{e(x["shop"])}</h1>{paras(intro) if intro else ""}</section>\n' \
-           f'<section class="grid">\n' + "\n".join(cards) + "\n</section>"
+           f'<section class="grid shop-grid">\n' + "\n".join(cards) + "\n</section>"
     (out / "shop.html").write_text(page(lng, site, "shop.html", f"{x['shop']} · {site[f'name_{lng}']}", body, "shop.html"), encoding="utf-8")
 
     # ---- product pages ----
