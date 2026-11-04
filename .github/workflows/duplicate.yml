@@ -1,0 +1,28 @@
+name: Duplicate entry (from dashboard)
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Pages CMS payload as JSON
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  duplicate:
+    runs-on: ubuntu-latest
+    env:
+      PAYLOAD: ${{ inputs.payload }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: copy
+        run: python3 .github/scripts/duplicate_entry.py
+      - name: Commit
+        run: |
+          git config user.name "Pages CMS duplicate"
+          git config user.email "actions@users.noreply.github.com"
+          git add "${{ steps.copy.outputs.dest }}"
+          git commit -m "Duplicate entry: ${{ steps.copy.outputs.dest }}"
+          git push

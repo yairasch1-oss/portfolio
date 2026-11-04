@@ -10,6 +10,20 @@ content:
     path: content/projects
     format: json
     filename: "{primary}.json"
+    actions:
+      - name: duplicate
+        label: "שכפול פרויקט"
+        workflow: duplicate.yml
+        scope: entry
+        ref: current
+        confirm:
+          title: "שכפול פרויקט"
+          message: "נוצר עותק עם כל הפרטים והתמונות. אחרי דקה הוא יופיע ברשימה (אם לא, רעננו את הדף)."
+          button: "שכפול"
+        fields:
+          - { name: title_he, label: "שם חדש (עברית)", type: text, required: true }
+          - { name: title_en, label: "New name (English)", type: text }
+          - { name: hide, label: "להסתיר באתר עד שאסיים לערוך", type: checkbox, default: true }
     fields:
       - { name: title_en, label: "Title (English)", type: string, required: true }
       - { name: title_he, label: "כותרת (עברית)", type: string }
@@ -61,6 +75,20 @@ content:
     path: content/shop
     format: json
     filename: "{primary}.json"
+    actions:
+      - name: duplicate
+        label: "שכפול מוצר"
+        workflow: duplicate.yml
+        scope: entry
+        ref: current
+        confirm:
+          title: "שכפול מוצר"
+          message: "נוצר עותק עם כל הפרטים והתמונות. אחרי דקה הוא יופיע ברשימה (אם לא, רעננו את הדף)."
+          button: "שכפול"
+        fields:
+          - { name: title_he, label: "שם חדש (עברית)", type: text, required: true }
+          - { name: title_en, label: "New name (English)", type: text }
+          - { name: hide, label: "להסתיר באתר עד שאסיים לערוך", type: checkbox, default: true }
     fields:
       - { name: title_en, label: "Product name (English)", type: string, required: true }
       - { name: title_he, label: "שם המוצר (עברית)", type: string }
