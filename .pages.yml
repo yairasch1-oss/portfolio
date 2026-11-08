@@ -119,6 +119,14 @@ content:
       - { name: pickup_en, label: "Pickup text (English)", type: string }
       - { name: shipping_he, label: "טקסט משלוח (עברית)", type: string }
       - { name: shipping_en, label: "Delivery text (English)", type: string }
+      - name: frame_colors
+        label: "צבעי מסגרת (לכל המוצרים)"
+        type: object
+        list: true
+        fields:
+          - { name: name_he, label: "שם הצבע (עברית)", type: string }
+          - { name: name_en, label: "Color name (English)", type: string }
+          - { name: color, label: "קוד צבע לדוגמית, למשל #1d1d1b", type: string }
       - { name: intro_he, label: "פתיח לעמוד החנות (עברית)", type: text }
       - { name: intro_en, label: "Shop intro (English)", type: text }
       - { name: terms_he, label: "תקנון (עברית) – שורה שמתחילה ב-## היא כותרת", type: text }
