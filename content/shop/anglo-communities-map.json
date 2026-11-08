@@ -4,20 +4,14 @@
   "order": 1,
   "draft": false,
   "cover": "/media/anglo-communities-map-poster.png",
-  "text_en": "A poster from my final project, “Judaism and Humanity”: a series of maps surveying South Jerusalem as a stronghold of liberal religiosity. Submitted to the Department of Visual Communication, Bezalel Academy of Arts and Design, 2026.",
-  "text_he": "פוסטר מתוך פרויקט הגמר שלי: ׳יהדות ואנושיות – סדרת מפות שסוקרות את דרום-ירושלים כמעוז של דתיות ליברלית.׳ הוגש במחלקה לתקשורת חזותית, בצלאל, 2026.",
+  "text_en": "A poster from my final project, “Judaism and Humanity”: a series of maps surveying South Jerusalem as a stronghold of liberal religiosity. Submitted to the Department of Visual Communication, Bezalel Academy of Arts and Design, 2026.\n\nPrinted on 240 gsm fine paper.\n\nHigh-definition Indigo printing for precise detail.\n\nLimited edition.",
+  "text_he": "פוסטר מתוך פרויקט הגמר שלי: ׳יהדות ואנושיות – סדרת מפות שסוקרות את דרום-ירושלים כמעוז של דתיות ליברלית.׳ הוגש במחלקה לתקשורת חזותית, בצלאל, 2026.\n\nמודפס על נייר איכותי, גימור מט, 240 גרם.\n\nדפוס אינדיגו מיוחד, לשמירה על חדות בפרטים הקטנים.\n\nמהדורה מוגבלת. ",
   "variants": [
     {
       "size_he": "פוסטר 35×70 ס״מ",
-      "size_en": "Poster 35×70 cm",
-      "price": 100,
-      "frame_price": 20
-    },
-    {
-      "size_he": "פוסטר 50×100 ס״מ",
-      "size_en": "Poster 50×100 cm",
-      "price": 150,
-      "frame_price": 40
+      "size_en": "Poster 35×70 cm (28\"*14\")",
+      "price": 140,
+      "frame_price": 100
     }
   ]
 }
