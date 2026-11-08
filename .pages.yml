@@ -107,6 +107,15 @@ content:
           - { name: size_en, label: "Size (English), e.g. Poster 35×70 cm", type: string }
           - { name: price, label: "מחיר (₪)", type: number }
           - { name: frame_price, label: "תוספת מסגרת (₪) – ריק = אין מסגרת לגודל הזה", type: number }
+      - name: frame_colors
+        label: "צבעי מסגרת למוצר הזה (ריק = הרשימה הכללית מהגדרות החנות)"
+        type: object
+        list: true
+        fields:
+          - { name: name_he, label: "שם הצבע (עברית)", type: string }
+          - { name: name_en, label: "Color name (English)", type: string }
+          - { name: color, label: "קוד צבע לדוגמית, למשל #1d1d1b", type: string }
+          - { name: available, label: "זמין במלאי (בלי סימון = לא מוצג באתר)", type: boolean, default: true }
 
   - name: shop_settings
     label: חנות – הגדרות ותקנון
@@ -120,7 +129,7 @@ content:
       - { name: shipping_he, label: "טקסט משלוח (עברית)", type: string }
       - { name: shipping_en, label: "Delivery text (English)", type: string }
       - name: frame_colors
-        label: "צבעי מסגרת (לכל המוצרים)"
+        label: "צבעי מסגרת – ברירת מחדל למוצרים בלי רשימה משלהם"
         type: object
         list: true
         fields:

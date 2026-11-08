@@ -78,8 +78,11 @@ def render(lng, site, settings, products, out, page, pic, paras, e, CARD, TILE):
     # ---- product pages ----
     live = bool(settings.get("checkout_live"))
     ship = settings.get("shipping_price") or 0
-    colors = [c for c in (settings.get("frame_colors") or []) if (c.get("name_he") or c.get("name_en")) and c.get("available", True) is not False]
+    ok = lambda c: (c.get("name_he") or c.get("name_en")) and c.get("available", True) is not False
+    default_colors = [c for c in (settings.get("frame_colors") or []) if ok(c)]
     for p in products:
+        # a product's own color list wins; an empty list falls back to the shop-wide list
+        colors = [c for c in p["frame_colors"] if ok(c)] if p.get("frame_colors") else default_colors
         data = {
             "slug": p["slug"], "lang": lng, "title": t(p, "title"), "cur": cur, "live": live,
             "email": site.get("email", ""), "ship": ship,
