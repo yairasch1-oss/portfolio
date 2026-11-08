@@ -1,21 +1,21 @@
 {
-  "title_en": "33",
-  "title_he": "33",
+  "title_en": "Katamonim",
+  "title_he": "קטמונים",
   "order": 3,
   "draft": true,
-  "text_en": "A poster from my final project, “Judaism and Humanity”: a series of maps surveying South Jerusalem as a stronghold of liberal religiosity. Submitted to the Department of Visual Communication, Bezalel Academy of Arts and Design, 2026.\n\nPrinted on 240 gsm fine paper.\n\nHigh-definition Indigo printing for precise detail.\n\nLimited edition.",
-  "text_he": "פוסטר מתוך פרויקט הגמר שלי: ׳יהדות ואנושיות – סדרת מפות שסוקרות את דרום-ירושלים כמעוז של דתיות ליברלית.׳ הוגש במחלקה לתקשורת חזותית, בצלאל, 2026.\n\nמודפס על נייר איכותי, גימור מט, 240 גרם.\n\nדפוס אינדיגו מיוחד, לשמירה על חדות בפרטים הקטנים.\n\nמהדורה מוגבלת. ",
+  "text_en": "A drawing of the housing project we lived in on Ma'aglei Yavne Street, Jerusalem. Giotto markers on paper.\n\nPrinted on 240 gsm fine paper.",
+  "text_he": "ציור של השיכון שגרנו בו ברחוב מעגלי יבנה בירושלים. טושים של גיוטו על נייר. \n\nמודפס על נייר איכותי, 240 גרם. ",
   "variants": [
     {
-      "size_he": "פוסטר 50×70 ס״מ",
-      "size_en": "Poster 50×70 cm (20\"*28\")",
-      "price": 140,
+      "size_he": "פוסטר 50×70 ס״מ. מהדורה מוגבלת: שבעה עותקים.",
+      "size_en": "Poster 50×70 cm (20\"*28\"). Limited Edition: 7 Copies.",
+      "price": 160,
       "frame_price": 60
     },
     {
-      "size_he": "פוסטר 30×40 ס״מ",
-      "size_en": "Poster 30×40 cm",
-      "price": 90,
+      "size_he": "פוסטר 29.7×42 ס״מ (A3)",
+      "size_en": "Poster 29.7×42 cm (A3)",
+      "price": 80,
       "frame_price": 25
     }
   ]
