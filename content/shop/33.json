@@ -2,7 +2,8 @@
   "title_en": "Katamonim",
   "title_he": "קטמונים",
   "order": 3,
-  "draft": true,
+  "draft": false,
+  "cover": "/media/שיכון מוקאפ.jpeg",
   "text_en": "A drawing of the housing project we lived in on Ma'aglei Yavne Street, Jerusalem. Giotto markers on paper.\n\nPrinted on 240 gsm fine paper.",
   "text_he": "ציור של השיכון שגרנו בו ברחוב מעגלי יבנה בירושלים. טושים של גיוטו על נייר. \n\nמודפס על נייר איכותי, 240 גרם. ",
   "variants": [
