@@ -17,28 +17,28 @@
           "name_he": "שחור",
           "name_en": "Black",
           "color": "#1d1d1b",
-          "price": 60,
+          "price": 75,
           "available": true
         },
         {
           "name_he": "לבן",
           "name_en": "White",
           "color": "#f3f1ec",
-          "price": 60,
+          "price": 75,
           "available": true
         },
         {
           "name_he": "עץ טבעי",
           "name_en": "Natural wood",
           "color": "#b5824f",
-          "price": 60,
+          "price": 99,
           "available": true
         }
       ]
     },
     {
-      "size_he": "פוסטר 30×40 ס״מ",
-      "size_en": "Poster 30×40 cm",
+      "size_he": "פוסטר 29.7×42 ס״מ (A3)",
+      "size_en": "Poster 29.7×42 cm (A3)",
       "price": 90,
       "available": true,
       "frames": [
@@ -46,21 +46,21 @@
           "name_he": "שחור",
           "name_en": "Black",
           "color": "#1d1d1b",
-          "price": 25,
+          "price": 35,
           "available": true
         },
         {
           "name_he": "לבן",
           "name_en": "White",
           "color": "#f3f1ec",
-          "price": 25,
+          "price": 35,
           "available": true
         },
         {
           "name_he": "עץ טבעי",
           "name_en": "Natural wood",
           "color": "#b5824f",
-          "price": 25,
+          "price": 35,
           "available": true
         }
       ]
