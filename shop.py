@@ -78,7 +78,7 @@ def render(lng, site, settings, products, out, page, pic, paras, e, CARD, TILE):
     # ---- product pages ----
     live = bool(settings.get("checkout_live"))
     ship = settings.get("shipping_price") or 0
-    colors = [c for c in (settings.get("frame_colors") or []) if c.get("name_he") or c.get("name_en")]
+    colors = [c for c in (settings.get("frame_colors") or []) if (c.get("name_he") or c.get("name_en")) and c.get("available", True) is not False]
     for p in products:
         data = {
             "slug": p["slug"], "lang": lng, "title": t(p, "title"), "cur": cur, "live": live,
