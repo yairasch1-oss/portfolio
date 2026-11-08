@@ -63,7 +63,7 @@ def render(lng, site, settings, products, out, page, pic, paras, e, CARD, TILE):
     # ---- product list ----
     cards = []
     for p in products:
-        low = min(v.get("price") or 0 for v in p["variants"])
+        low = min([v.get("price") or 0 for v in p["variants"] if v.get("available", True) is not False] or [0])
         cover = p.get("cover") or (p.get("images") or [""])[0]
         fig = pic(cover, "", t(p, "title"), SHOP_CARD) if cover else ""
         blurb = re.split(r"\n\s*\n", t(p, "text").strip())[0] if t(p, "text") else ""
@@ -78,33 +78,34 @@ def render(lng, site, settings, products, out, page, pic, paras, e, CARD, TILE):
     # ---- product pages ----
     live = bool(settings.get("checkout_live"))
     ship = settings.get("shipping_price") or 0
-    ok = lambda c: (c.get("name_he") or c.get("name_en")) and c.get("available", True) is not False
-    default_colors = [c for c in (settings.get("frame_colors") or []) if ok(c)]
+    on = lambda o: o.get("available", True) is not False
+    name = lambda o, k: o.get(f"{k}_{lng}") or o.get(f"{k}_en") or ""
     for p in products:
-        # a product's own color list wins; an empty list falls back to the shop-wide list
-        colors = [c for c in p["frame_colors"] if ok(c)] if p.get("frame_colors") else default_colors
+        variants = []
+        for v in p["variants"]:
+            if not on(v):
+                continue
+            frames = [{"name": name(fr, "name"), "color": fr.get("color") or "#cccccc", "price": fr.get("price") or 0}
+                      for fr in (v.get("frames") or []) if on(fr) and name(fr, "name")]
+            variants.append({"label": name(v, "size"), "price": v.get("price") or 0, "frames": frames})
+        if not variants:
+            continue
         data = {
             "slug": p["slug"], "lang": lng, "title": t(p, "title"), "cur": cur, "live": live,
-            "email": site.get("email", ""), "ship": ship,
-            "variants": [{"label": v.get(f"size_{lng}") or v.get("size_en") or "", "price": v.get("price") or 0,
-                          "frame": v.get("frame_price") or 0} for v in p["variants"]],
+            "email": site.get("email", ""), "ship": ship, "variants": variants,
             "txt": {k: x[k] for k in ("subject", "total", "frame", "color", "delivery", "err", "wait", "name", "email", "phone", "street", "city", "notes", "size")},
             "deliveryLabels": [t(settings, "pickup"), t(settings, "shipping")],
-            "colors": [c.get(f"name_{lng}") or c.get("name_en") or "" for c in colors],
         }
         sizes = "".join(
             f'<label class="opt"><input type="radio" name="variant" value="{i}"{" checked" if i == 0 else ""} required>'
             f'<span>{e(v["label"])}</span><span class="opt-price">{e(money(v["price"], cur, lng))}</span></label>'
-            for i, v in enumerate(data["variants"]))
-        any_frame = any(v["frame"] for v in data["variants"])
-        swatches = ("" if not colors else
-            f'<div class="swatches" id="frame-colors" hidden><span class="swatch-legend">{e(x["color"])}</span><div class="swatch-row">' +
-            "".join(f'<label class="swatch"><input type="radio" name="frame_color" value="{i}"{" checked" if i == 0 else ""}>'
-                    f'<span class="chip" style="--chip:{e(c.get("color") or "#ccc")}"></span><span>{e(data["colors"][i])}</span></label>'
-                    for i, c in enumerate(colors)) + "</div></div>")
+            for i, v in enumerate(variants))
+        any_frame = any(v["frames"] for v in variants)
         frame = (f'<fieldset class="field" id="frame-field"><legend>{e(x["frame_h"])}</legend>'
                  f'<label class="opt"><input type="checkbox" name="frame" id="frame"><span>{e(x["frame"])}</span>'
-                 f'<span class="opt-price" id="frame-price"></span></label>{swatches}</fieldset>') if any_frame else ""
+                 f'<span class="opt-price" id="frame-price"></span></label>'
+                 f'<div class="swatches" id="frame-colors" hidden><span class="swatch-legend">{e(x["color"])}</span>'
+                 f'<div class="swatch-row" id="swatch-row"></div></div></fieldset>') if any_frame else ""
         delivery = (f'<fieldset class="field"><legend>{e(x["delivery"])}</legend>'
                     f'<label class="opt"><input type="radio" name="delivery" value="pickup" checked><span>{e(t(settings, "pickup"))}</span><span class="opt-price">{e(x["free"])}</span></label>'
                     f'<label class="opt"><input type="radio" name="delivery" value="ship"><span>{e(t(settings, "shipping"))}</span><span class="opt-price">+{e(money(ship, cur, lng))}</span></label>'
@@ -164,18 +165,30 @@ ORDER_JS = r"""
   var fmt=function(n){return D.lang==='he'?n+' '+D.cur:D.cur+n;};
   var frameBox=document.getElementById('frame'),frameField=document.getElementById('frame-field');
   var addr=document.getElementById('address'),err=document.getElementById('form-error');
+  var row=document.getElementById('swatch-row'),shownFor=-1;
+  function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+  function drawFrames(vi){
+    if(!row||shownFor===vi)return;var v=D.variants[vi],keep=+(f.querySelector('[name=frame_color]:checked')||{value:0}).value;
+    if(keep>=v.frames.length)keep=0;
+    row.innerHTML=v.frames.map(function(fr,i){return '<label class="swatch"><input type="radio" name="frame_color" value="'+i+'"'+(i===keep?' checked':'')+'>'+
+      '<span class="chip" style="--chip:'+esc(fr.color)+'"></span><span>'+esc(fr.name)+'</span><span class="swatch-price">+'+esc(fmt(fr.price))+'</span></label>';}).join('');
+    shownFor=vi;
+  }
   function state(){
     var vi=+(f.querySelector('[name=variant]:checked')||{value:0}).value,v=D.variants[vi];
     var ship=(f.querySelector('[name=delivery]:checked')||{}).value==='ship';
-    if(frameField){frameField.hidden=!v.frame;if(!v.frame)frameBox.checked=false;
-      document.getElementById('frame-price').textContent=v.frame?'+'+fmt(v.frame):'';}
-    var frame=!!(frameBox&&frameBox.checked&&v.frame);
-    var sw=document.getElementById('frame-colors');if(sw)sw.hidden=!frame;
-    var ci=frame&&sw?+(f.querySelector('[name=frame_color]:checked')||{value:0}).value:null;
+    var has=v.frames.length>0,fr=null;
+    if(frameField){
+      frameField.hidden=!has;if(!has)frameBox.checked=false;drawFrames(vi);
+      var on=has&&frameBox.checked;document.getElementById('frame-colors').hidden=!on;
+      if(on){fr=v.frames[+(f.querySelector('[name=frame_color]:checked')||{value:0}).value]||v.frames[0];}
+      var prices=v.frames.map(function(x){return x.price;}),lo=Math.min.apply(null,prices.length?prices:[0]);
+      document.getElementById('frame-price').textContent=has?'+'+fmt(fr?fr.price:lo):'';
+    }
     addr.hidden=!ship;addr.querySelectorAll('input').forEach(function(i){i.required=ship;});
-    var total=v.price+(frame?v.frame:0)+(ship?D.ship:0);
+    var total=v.price+(fr?fr.price:0)+(ship?D.ship:0);
     document.getElementById('total').textContent=fmt(total);
-    return {variant:vi,frame:frame,color:ci,ship:ship,total:total,v:v};
+    return {variant:vi,frame:fr,frameIndex:fr?v.frames.indexOf(fr):null,ship:ship,total:total,v:v};
   }
   f.addEventListener('change',state);state();
   function val(n){var el=f.elements[n];return el?el.value.trim():'';}
@@ -183,11 +196,11 @@ ORDER_JS = r"""
     ev.preventDefault();err.hidden=true;
     if(!f.checkValidity()){f.reportValidity();return;}
     var s=state(),btn=document.getElementById('buy');
-    var order={product:D.slug,lang:D.lang,variant:s.variant,frame:s.frame,frame_color:s.color,delivery:s.ship?'ship':'pickup',
+    var order={product:D.slug,lang:D.lang,variant:s.variant,frame:s.frameIndex,delivery:s.ship?'ship':'pickup',
       name:val('name'),email:val('email'),phone:val('phone'),street:val('street'),city:val('city'),notes:val('notes')};
     if(!D.live){
       var lines=[D.title,T.size+': '+s.v.label+' ('+fmt(s.v.price)+')'];
-      if(s.frame)lines.push(T.frame+' (+'+fmt(s.v.frame)+')'+(s.color!==null&&D.colors[s.color]?', '+T.color+': '+D.colors[s.color]:''));
+      if(s.frame)lines.push(T.frame+': '+s.frame.name+' (+'+fmt(s.frame.price)+')');
       lines.push(T.delivery+': '+D.deliveryLabels[s.ship?1:0]+(s.ship?' (+'+fmt(D.ship)+')':''));
       lines.push(T.total+': '+fmt(s.total),'',T.name+': '+order.name,T.email+': '+order.email,T.phone+': '+order.phone);
       if(s.ship)lines.push(T.street+': '+order.street,T.city+': '+order.city);

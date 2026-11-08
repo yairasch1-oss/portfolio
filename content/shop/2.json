@@ -11,33 +11,59 @@
       "size_he": "פוסטר 50×70 ס״מ",
       "size_en": "Poster 50×70 cm (20\"*28\")",
       "price": 140,
-      "frame_price": 60
+      "available": true,
+      "frames": [
+        {
+          "name_he": "שחור",
+          "name_en": "Black",
+          "color": "#1d1d1b",
+          "price": 60,
+          "available": true
+        },
+        {
+          "name_he": "לבן",
+          "name_en": "White",
+          "color": "#f3f1ec",
+          "price": 60,
+          "available": true
+        },
+        {
+          "name_he": "עץ טבעי",
+          "name_en": "Natural wood",
+          "color": "#b5824f",
+          "price": 60,
+          "available": true
+        }
+      ]
     },
     {
       "size_he": "פוסטר 30×40 ס״מ",
       "size_en": "Poster 30×40 cm",
       "price": 90,
-      "frame_price": 25
-    }
-  ],
-  "frame_colors": [
-    {
-      "name_he": "שחור",
-      "name_en": "Black",
-      "color": "#1d1d1b",
-      "available": true
-    },
-    {
-      "name_he": "לבן",
-      "name_en": "White",
-      "color": "#f3f1ec",
-      "available": true
-    },
-    {
-      "name_he": "עץ טבעי",
-      "name_en": "Natural wood",
-      "color": "#b5824f",
-      "available": true
+      "available": true,
+      "frames": [
+        {
+          "name_he": "שחור",
+          "name_en": "Black",
+          "color": "#1d1d1b",
+          "price": 25,
+          "available": true
+        },
+        {
+          "name_he": "לבן",
+          "name_en": "White",
+          "color": "#f3f1ec",
+          "price": 25,
+          "available": true
+        },
+        {
+          "name_he": "עץ טבעי",
+          "name_en": "Natural wood",
+          "color": "#b5824f",
+          "price": 25,
+          "available": true
+        }
+      ]
     }
   ]
 }

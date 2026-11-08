@@ -11,27 +11,30 @@
       "size_he": "פוסטר 35×70 ס״מ",
       "size_en": "Poster 35×70 cm (28\"*14\")",
       "price": 140,
-      "frame_price": 100
-    }
-  ],
-  "frame_colors": [
-    {
-      "name_he": "שחור",
-      "name_en": "Black",
-      "color": "#1d1d1b",
-      "available": true
-    },
-    {
-      "name_he": "לבן",
-      "name_en": "White",
-      "color": "#f3f1ec",
-      "available": true
-    },
-    {
-      "name_he": "עץ טבעי",
-      "name_en": "Natural wood",
-      "color": "#b5824f",
-      "available": true
+      "available": true,
+      "frames": [
+        {
+          "name_he": "שחור",
+          "name_en": "Black",
+          "color": "#1d1d1b",
+          "price": 100,
+          "available": true
+        },
+        {
+          "name_he": "לבן",
+          "name_en": "White",
+          "color": "#f3f1ec",
+          "price": 100,
+          "available": true
+        },
+        {
+          "name_he": "עץ טבעי",
+          "name_en": "Natural wood",
+          "color": "#b5824f",
+          "price": 100,
+          "available": true
+        }
+      ]
     }
   ]
 }

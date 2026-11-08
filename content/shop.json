@@ -9,25 +9,5 @@
   "shipping_en": "Home delivery",
   "shipping_he": "משלוח עד הבית",
   "terms_en": "## General\nThis site is operated by Yair Asch-Resnick, Aliyat HaNoar 31, Givatayim, Israel. Placing an order on this site means you agree to these terms.\n\n## Prices and payment\nPrices are in Israeli shekels (ILS) and include VAT. Payment is made on the secure payment page of the payment provider; card details are not stored on this site. A receipt is emailed to you after payment.\n\n## Delivery and pickup\nOrders can be picked up in Givatayim by arrangement at no cost, or shipped to your home for the fee shown on the product page. Preparation and delivery take up to 14 business days from payment. If there is a delay, I will let you know.\n\n## Cancellations and returns\nYou may cancel a purchase under the Israeli Consumer Protection Law, 1981, within 14 days of receiving the item, by email or phone. The item must be returned in its packaging and in the condition it arrived, at the customer's expense. The amount paid is refunded minus a cancellation fee of 5% of the price or ILS 100, whichever is lower. An item that arrives damaged or different from the order is replaced or fully refunded, with no fee.\n\n## Privacy\nThe details you give when ordering are used only to fulfil the order, ship it and issue a receipt, and are not shared with anyone except the payment provider.\n\n## Contact\nQuestions: yairasch1@gmail.com, phone +972 50 585 3520.",
-  "terms_he": "## כללי\nהאתר מופעל על ידי יאיר אש־רזניק, עליית הנוער 31, גבעתיים. ביצוע הזמנה באתר מהווה הסכמה לתנאים אלה.\n\n## מחירים ותשלום\nהמחירים באתר בשקלים חדשים וכוללים מע״מ כחוק. התשלום מתבצע בדף תשלום מאובטח של ספק הסליקה, ופרטי כרטיס האשראי אינם נשמרים באתר. לאחר התשלום נשלחת קבלה לכתובת הדוא״ל שמסרת.\n\n## משלוח ואיסוף\nניתן לאסוף את ההזמנה בתיאום מגבעתיים ללא עלות, או לבחור משלוח עד הבית בתוספת התשלום המופיע בעמוד המוצר. זמן ההכנה והמשלוח הוא עד 14 ימי עסקים מיום התשלום. אם יהיה עיכוב, אעדכן אותך.\n\n## ביטול עסקה והחזרות\nניתן לבטל עסקה בהתאם לחוק הגנת הצרכן, התשמ״א–1981: בתוך 14 יום מיום קבלת המוצר, בהודעה בדוא״ל או בטלפון. המוצר יוחזר באריזתו ובמצב שבו התקבל, והחזרתו על חשבון הלקוח. במקרה של ביטול יוחזר הסכום ששולם בניכוי דמי ביטול של 5% מהמחיר או 100 ₪, הנמוך מביניהם. מוצר שהגיע פגום או שונה ממה שהוזמן יוחלף או שהתשלום עבורו יוחזר במלואו, ללא דמי ביטול.\n\n## פרטיות\nהפרטים שנמסרים בעת ההזמנה משמשים רק לצורך ביצוע ההזמנה, המשלוח והפקת הקבלה, ואינם מועברים לגורם אחר מלבד ספק הסליקה.\n\n## יצירת קשר\nלכל שאלה: yairasch1@gmail.com, טלפון 050-585-3520.",
-  "frame_colors": [
-    {
-      "name_he": "שחור",
-      "name_en": "Black",
-      "color": "#1d1d1b",
-      "available": true
-    },
-    {
-      "name_he": "לבן",
-      "name_en": "White",
-      "color": "#f3f1ec",
-      "available": true
-    },
-    {
-      "name_he": "עץ טבעי",
-      "name_en": "Natural wood",
-      "color": "#b5824f",
-      "available": true
-    }
-  ]
+  "terms_he": "## כללי\nהאתר מופעל על ידי יאיר אש־רזניק, עליית הנוער 31, גבעתיים. ביצוע הזמנה באתר מהווה הסכמה לתנאים אלה.\n\n## מחירים ותשלום\nהמחירים באתר בשקלים חדשים וכוללים מע״מ כחוק. התשלום מתבצע בדף תשלום מאובטח של ספק הסליקה, ופרטי כרטיס האשראי אינם נשמרים באתר. לאחר התשלום נשלחת קבלה לכתובת הדוא״ל שמסרת.\n\n## משלוח ואיסוף\nניתן לאסוף את ההזמנה בתיאום מגבעתיים ללא עלות, או לבחור משלוח עד הבית בתוספת התשלום המופיע בעמוד המוצר. זמן ההכנה והמשלוח הוא עד 14 ימי עסקים מיום התשלום. אם יהיה עיכוב, אעדכן אותך.\n\n## ביטול עסקה והחזרות\nניתן לבטל עסקה בהתאם לחוק הגנת הצרכן, התשמ״א–1981: בתוך 14 יום מיום קבלת המוצר, בהודעה בדוא״ל או בטלפון. המוצר יוחזר באריזתו ובמצב שבו התקבל, והחזרתו על חשבון הלקוח. במקרה של ביטול יוחזר הסכום ששולם בניכוי דמי ביטול של 5% מהמחיר או 100 ₪, הנמוך מביניהם. מוצר שהגיע פגום או שונה ממה שהוזמן יוחלף או שהתשלום עבורו יוחזר במלואו, ללא דמי ביטול.\n\n## פרטיות\nהפרטים שנמסרים בעת ההזמנה משמשים רק לצורך ביצוע ההזמנה, המשלוח והפקת הקבלה, ואינם מועברים לגורם אחר מלבד ספק הסליקה.\n\n## יצירת קשר\nלכל שאלה: yairasch1@gmail.com, טלפון 050-585-3520."
 }
