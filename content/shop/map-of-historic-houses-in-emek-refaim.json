@@ -1,0 +1,69 @@
+{
+  "title_en": "Map of Historic Houses in Emek Refaim",
+  "title_he": "מפת בתים היסטוריים בעמק רפאים",
+  "order": 3,
+  "draft": true,
+  "cover": "/media/בתי כנסת מוקאפ.jpg",
+  "text_en": "A poster from my final project, “Judaism and Humanity”: a series of maps surveying South Jerusalem as a stronghold of liberal religiosity. Submitted to the Department of Visual Communication, Bezalel Academy of Arts and Design, 2026.\n\nPrinted on 240 gsm fine paper.\n\nHigh-definition Indigo printing for precise detail.\n\nLimited edition.",
+  "text_he": "פוסטר מתוך פרויקט הגמר שלי: ׳יהדות ואנושיות – סדרת מפות שסוקרות את דרום-ירושלים כמעוז של דתיות ליברלית.׳ הוגש במחלקה לתקשורת חזותית, בצלאל, 2026.\n\nמודפס על נייר איכותי, גימור מט, 240 גרם.\n\nדפוס אינדיגו מיוחד, לשמירה על חדות בפרטים הקטנים.\n\nמהדורה מוגבלת. ",
+  "variants": [
+    {
+      "size_he": "פוסטר 50×70 ס״מ",
+      "size_en": "Poster 50×70 cm (20\"*28\")",
+      "price": 140,
+      "available": true,
+      "frames": [
+        {
+          "name_he": "שחור",
+          "name_en": "Black",
+          "color": "#1d1d1b",
+          "price": 75,
+          "available": true
+        },
+        {
+          "name_he": "לבן",
+          "name_en": "White",
+          "color": "#f3f1ec",
+          "price": 75,
+          "available": true
+        },
+        {
+          "name_he": "עץ טבעי",
+          "name_en": "Natural wood",
+          "color": "#b5824f",
+          "price": 99,
+          "available": true
+        }
+      ]
+    },
+    {
+      "size_he": "פוסטר 29.7×42 ס״מ (A3)",
+      "size_en": "Poster 29.7×42 cm (A3)",
+      "price": 90,
+      "available": true,
+      "frames": [
+        {
+          "name_he": "שחור",
+          "name_en": "Black",
+          "color": "#1d1d1b",
+          "price": 35,
+          "available": true
+        },
+        {
+          "name_he": "לבן",
+          "name_en": "White",
+          "color": "#f3f1ec",
+          "price": 35,
+          "available": true
+        },
+        {
+          "name_he": "עץ טבעי",
+          "name_en": "Natural wood",
+          "color": "#b5824f",
+          "price": 35,
+          "available": true
+        }
+      ]
+    }
+  ]
+}
